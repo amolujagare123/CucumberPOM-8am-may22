@@ -76,4 +76,14 @@ public class DarkskySD {
         Assert.assertTrue("All differences are not 2",flag);
 
     }
+
+    @Then("I verify today's lowest and highest temp is displayed correctly")
+    public void iVerifyTodaySLowestAndHighestTempIsDisplayedCorrectly() {
+
+        ArrayList<String> expected = darkskyHomePage.getCurrentTempList();
+
+        ArrayList<String> actual = darkskyHomePage.getTodaysTempList();
+
+        Assert.assertEquals("temperatures are not the proper values",expected,actual);
+    }
 }

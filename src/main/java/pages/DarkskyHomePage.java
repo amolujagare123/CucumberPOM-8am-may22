@@ -10,6 +10,46 @@ public class DarkskyHomePage extends Base {
     By timelineTemp = By.xpath("//span[@class='first']//span");
     By timeListRaw = By.xpath("//span[@class='hour']/span");
 
+    By currentLowTemp = By.xpath("//span[@class='low-temp-text']");
+    By currentHighTemp = By.xpath("//span[@class='high-temp-text']");
+
+    By todayLowestTemp = By.xpath("//a[@data-day='0']//span[@class='minTemp']");
+    By todayHighestTemp = By.xpath("//a[@data-day='0']//span[@class='maxTemp']");
+
+    By darkSkyAPI = By.xpath("//a[normalize-space()='Dark Sky API']");
+
+    public void clickDarkSkyAPI()
+    {
+        clickOn(darkSkyAPI);
+    }
+
+
+    public ArrayList<String> getCurrentTempList()
+    {
+        String lowestTemp = getTextFromElement(currentLowTemp).split("˚")[0]; // 116˚
+        String highestTemp = getTextFromElement(currentHighTemp).split("˚")[0]; // 116˚
+
+        ArrayList<String> tempList = new ArrayList<>();
+        tempList.add(lowestTemp);
+        tempList.add(highestTemp);
+        System.out.println(tempList);
+        return tempList;
+    }
+
+    public ArrayList<String> getTodaysTempList()
+    {
+        String lowestTemp = getTextFromElement(todayLowestTemp).split("˚")[0]; // 116˚
+        String highestTemp = getTextFromElement(todayHighestTemp).split("˚")[0]; // 116˚
+
+        ArrayList<String> tempList = new ArrayList<>();
+        tempList.add(lowestTemp);
+        tempList.add(highestTemp);
+        System.out.println(tempList);
+
+        return tempList;
+    }
+
+
     public ArrayList<Integer> getTimeList()
     {
         ArrayList<String> timeListStr = getElementTextList(timeListRaw);
