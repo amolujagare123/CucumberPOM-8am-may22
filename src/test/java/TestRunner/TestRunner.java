@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "Features"
 ,glue="stepdefinitions"
-,tags = "@starverify"
+,tags = "@DistList"
 )
 public class TestRunner {
 }

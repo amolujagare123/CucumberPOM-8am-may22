@@ -24,4 +24,4 @@ Feature: All bookings.com scenarios
   @hotelsSearch
   Scenario: verify given hotel is present in the list
     Given I am on default locations search result screen
-    Then I verify "Alagoa Resort" is within search result
+    Then I verify "Casa Aluizio" is within search result

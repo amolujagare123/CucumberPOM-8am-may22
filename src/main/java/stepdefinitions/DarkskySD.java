@@ -86,4 +86,6 @@ public class DarkskySD {
 
         Assert.assertEquals("temperatures are not the proper values",expected,actual);
     }
+
+
 }
